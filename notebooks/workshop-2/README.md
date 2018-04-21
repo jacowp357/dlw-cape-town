@@ -4,7 +4,7 @@
 
 ### Objective
 
-In this workshop our objective is to implement regularisation to a non-linear classifier on the MNIST data set.
+In this workshop our objective is to implement regularisation to a non-linear classifier on the MNIST dataset.
 
 After you have tested the non-linear classifier your job is to add:
 
