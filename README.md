@@ -10,9 +10,9 @@ Download and install the prerequisites from [here](https://github.com/LeonMVanDy
 
 All practicals are contained in the notebooks folder:
 
-1. workshop-1
-2. workshop-2
-3. workshop-3
-4. workshop-4
+* workshop-1
+* workshop-2
+* workshop-3
+* workshop-4
 
 Please follow each of the practical's instructions provided in their respective README files.
