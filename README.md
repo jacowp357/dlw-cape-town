@@ -15,4 +15,4 @@ All practicals are contained in the notebooks folder:
 * workshop-3
 * workshop-4
 
-Please follow each of the practical's instructions provided in their respective README files.
+Please follow each of the practical's instructions provided in the respective README files.
