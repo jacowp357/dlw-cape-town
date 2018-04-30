@@ -4,7 +4,7 @@
 
 ### Objective
 
-In this workshop we have two objectives:
+In this workshop, we have two objectives:
 
 1. Implement a convolutional neural network on the MNIST dataset,
 2. Implement a recurrent neural network on ...

@@ -4,7 +4,7 @@
 
 ### Objective
 
-In this workshop, our objective is to implement and test two popular regularisation techniques to a non-linear classifier on the MNIST dataset.
+In this workshop, our objective is to implement and test two popular regularisation techniques on a non-linear classifier with the MNIST dataset.
 
 Your job is to experiment with the following:
 
