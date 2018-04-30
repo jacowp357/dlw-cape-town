@@ -4,11 +4,11 @@
 
 ### Objective
 
-In this workshop our objective is to implement regularisation to a non-linear classifier on the MNIST dataset.
+In this workshop, our objective is to implement and test two popular regularisation techniques to a non-linear classifier on the MNIST dataset.
 
-After you have tested the non-linear classifier your job is to add:
+Your job is to experiment with the following:
 
-* L2 regularization and observe your results,
-* remove L2 regularisation and add random dropout.
+* L2 regularisation,
+* remove L2 regularisation and try random dropout.
 
-Carefully observe the difference between the training set loss and the validation set loss with and without the implementation of regularisation. Make sure you understand why this technique is important. 
+Carefully observe the difference between the training set loss and the validation set loss with and without the implementation of regularisation. Make sure you understand why this technique is important and the different ways it can be implemented in the code. 
