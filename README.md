@@ -2,9 +2,9 @@
 
 ## Setting up your environment
 
-### 1. Docker image
+### 1. Docker container
 
-Download and install the prerequisites from [here](https://github.com/LeonMVanDyk/deep-learning-course). Follow all instructions as provided to run Jupyter notebooks. This docker image comes with all the dependencies and packages you will need to run the notebooks (i.e., ```Tensorflow```, ```Numpy```, ```jupyter-notebook``` etc.).
+Download and install the prerequisites from [here](https://github.com/LeonMVanDyk/deep-learning-course). Follow all instructions as provided to run Jupyter notebooks. This docker image comes with all the dependencies and packages you will need to run the notebooks (e.g. ```tensorflow```, ```numpy```, ```matplotlib```, ```jupyter-notebook``` etc.).
 
 ### 2. Practicals
 
