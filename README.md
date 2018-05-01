@@ -6,9 +6,9 @@
 
 Download and install the prerequisites from [here](https://github.com/LeonMVanDyk/deep-learning-course). Follow all instructions as provided to run Jupyter notebooks. This docker image comes with all the dependencies and packages you will need to run the notebooks (e.g. ```tensorflow```, ```numpy```, ```matplotlib```, ```jupyter-notebook``` etc.).
 
-Once your docker container is running, clone this repository into its working directory.
+Once your docker container is running, clone this repository into its working directory, from a terminal window (Command prompt on Windows) run the following command 
 
-```:~/source# git clone https://github.com/jacowp357/dlw-cape-town.git```
+`docker exec -it deep-learning-course git clone https://github.com/jacowp357/dlw-cape-town.git`
 
 ### 2. Practicals
 
