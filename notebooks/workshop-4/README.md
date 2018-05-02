@@ -4,5 +4,5 @@
 
 ### Objective
 
-In this workshop our objective is to...
+In this workshop, our objective is to...
 

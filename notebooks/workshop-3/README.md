@@ -7,7 +7,7 @@
 In this workshop, we have two objectives:
 
 1. Implement a convolutional neural network on the MNIST dataset,
-2. Implement a recurrent neural network on ...
+2. Implement a long short-term memory recurrent neural network (RNN-LSTM) that performs sentiment analysis on movie reviews.
 
 If you would like to get more real-world experience try the following exercise:
 
