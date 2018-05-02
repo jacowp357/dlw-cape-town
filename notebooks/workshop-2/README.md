@@ -16,6 +16,6 @@ Carefully observe the difference between the training set loss and the validatio
 If you would like to experiment with multi-label tasks:
 
 1. The `multi-label` notebook contains an exercise where more labels are added to the MNIST dataset.
-2. You can explore the code, think of your own labels to add, and learn how the network had to changed in order to do this task. 
+2. You can explore the code, think of your own labels to add, and learn how the network had to change in order to do this task. 
 
 
