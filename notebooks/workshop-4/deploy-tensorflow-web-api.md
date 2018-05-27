@@ -93,7 +93,7 @@ These command-line approaches were used in development and testing before the HT
 
 Each model on the server uses a plugin, which handles loading of the model and label files and then doing a prediction. Plugins have been setup with a python command-line interface, which allows testing a model prediction without the server.
 
-See [deploy-tensorflow-plugin-commands.ipynb]().
+See the [deploy-tensorflow-plugin-commands.ipynb](deploy-tensorflow-plugin-commands.ipynb) notebook.
 
 
 ### Web request
