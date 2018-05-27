@@ -64,7 +64,7 @@ The server comes with a built-in colour classifier model which is accessed using
 
 1. Stop the server by pressing _CTRL+C_ in this terminal window where `app.py` is running.
 
-2. Create symbolic links in the ML Server project to point to your own model and labels files in the _dlw-cape-town_ project.
+2. Create symbolic links in the ML Server project to point to your own model and label files in the _dlw-cape-town_ project.
     
     ```bash
     $ docker exec -it deep-learning-course sh -c \
@@ -82,7 +82,7 @@ The server comes with a built-in colour classifier model which is accessed using
     ```
 
 4. Go to the _Drop-in Color Predictor_ page at [http://localhost:9000/classify/dropinColors.html]() and upload an image.
-5. Optionally, you can retrain your model to get a new model file and labels file, stop and start the service to load the model onto the server, then do another prediction and compare the results with those from before. Or compare them with the built-in classifier's results for the same image and co-ordinates.
+5. Optionally, you can retrain your model to get a new model file and label file, stop and start the service to load the model onto the server, then do another prediction and compare the results with those from before. Or compare them with the built-in classifier's results for the same image and co-ordinates.
 
 ## Command-line predictions
 
@@ -98,7 +98,7 @@ Execute these commands within the Docker container bash terminal opened above.
 
 ### Plugin
 
-Each model on the server uses a plugin, which handles loading of the model and labels files and doing a prediction. Plugins have been setup with a python command-line interface, which allows testing a model prediction without the server.
+Each model on the server uses a plugin, which handles loading of the model and label files and then doing a prediction. Plugins have been setup with a python command-line interface, which allows testing a model prediction without the server.
 
 ```bash
 $ cd machine-learning-server/mlserver
