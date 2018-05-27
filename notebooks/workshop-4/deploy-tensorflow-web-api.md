@@ -13,7 +13,7 @@ The source code is available as a Github repo [here](https://github.com/MichaelC
 
 ## How the server starts
 
-When the application starts, the configured model files are loaded into memory, which makes them quick to access later, especially if they are large files. Then application's tree of endpoints is built. The documentation for the endpoint which handles the classification can be found [here](https://github.com/MichaelCurrin/machine-learning-server/blob/master/docs/api.md#plugin-endpoint).
+When the application starts, the configured model files are loaded into memory, which makes them quick to access later, especially if they are large files. Then the application's tree of endpoints is built and added on the server's path. The documentation for the endpoint which handles the classification can be found [here](https://github.com/MichaelCurrin/machine-learning-server/blob/master/docs/api.md#plugin-endpoint).
 
 ## How a prediction happens
 
