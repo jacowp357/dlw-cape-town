@@ -19,7 +19,7 @@ When the application starts, the configured model files are loaded into memory, 
 
 When a prediction is done as a direct request to the API or using the HTML frontend, the following steps happen on the server:
 
-1. Receive a HTTP _POST_ request.
+1. Receive an [HTTP _POST_](https://en.wikipedia.org/wiki/POST_(HTTP)) request.
 2. Validate input data and raise an error if necessary.
 3. Handle image resizing and cropping as configured.
 4. Select appropriate TensorFlow model.
