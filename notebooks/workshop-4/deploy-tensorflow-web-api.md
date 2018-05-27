@@ -20,18 +20,17 @@ When the application starts, the configured model files are loaded into memory, 
 When a prediction is done as a direct request to the API or using the HTML frontend, the following steps happen on the server:
 
 1. Receive an [HTTP _POST_](https://en.wikipedia.org/wiki/POST_(HTTP)) request.
-2. Validate input data and raise an error if necessary.
-3. Handle image resizing and cropping as configured.
-4. Select appropriate TensorFlow model.
-5. Run a session and get results ordered with the most likely items first.
-6. Format the results as JSON text and return to the client which made the request.
+2. Handle image resizing and cropping as configured.
+3. Select appropriate TensorFlow model.
+4. Run a session and get results ordered with the most likely items first.
+5. If successful, format the results as JSON text and return data to the client which made the request.
 
 
 ## Setup and usage instructions
 
 1. Get the _ML Server_ sample images onto your local machine. Download a zip [here](https://github.com/MichaelCurrin/machine-learning-server/raw/master/mlserver/sampleImages/digits_and_photos.zip) and extract the contents using your preferred method.
 2. To optionally prettify the JSON output in the browser, you can install _JSON Viewer_ as a [Chrome Extension](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh) or [Firefox Add-On](https://addons.mozilla.org/en-US/firefox/addon/jsonview/).
-3. Follow the instructions in [Deep Learning Course instructions](https://github.com/LeonMVanDyk/deep-learning-course) then run your container in a terminal session.
+3. Follow the instructions in [Deep Learning Course instructions](https://github.com/LeonMVanDyk/deep-learning-course) to get a Docker image and start running a container in a terminal session.
 4. Open another terminal session on your host machine and execute the following commands.
 
     1. Get the [ML Server repo](https://github.com/MichaelCurrin/machine-learning-server) onto the container. The application is pre-configured and all dependencies have been setup already.
@@ -61,7 +60,7 @@ When a prediction is done as a direct request to the API or using the HTML front
 
 ## Drop in your own colour classifier
 
-The server comes with a built-in colour classifier model which is accessed using a certain HTML page and API endpoint. It also has as service which is configured to a do a prediction using a developer's _own_ colour model. So if you hav trained a colour classifier in the [Colour Challenge](https://github.com/jacowp357/dlw-cape-town/blob/master/notebooks/workshop-3/colour-challenge/colour-challenge.ipynb) of workshop 3 and want to use try it out in the browser, follow these instructions.
+The server comes with a built-in colour classifier model which is accessed using a certain HTML page and API endpoint. It also has as service which is configured to a do a prediction using a developer's _own_ colour model. So if you have trained a colour classifier in the [Colour Challenge](/notebooks/workshop-3/colour-challenge/colour-challenge.ipynb) of workshop 3 and want to use try it out in the browser, follow these instructions.
 
 1. Stop the server by pressing _CTRL+C_ in this terminal window where `app.py` is running.
 
@@ -69,10 +68,10 @@ The server comes with a built-in colour classifier model which is accessed using
     
     ```bash
     $ docker exec -it deep-learning-course sh -c \
-      'ln -fs ~/source/dlw-cape-town/notebooks/workshop-3/colour-challenge/output_graph.pb \
+      'ln -s ~/source/dlw-cape-town/notebooks/workshop-3/colour-challenge/output_graph.pb \
       machine-learning-server/mlserver/models/dropinColorClassifier/modelGraph.local.pb'
     $ docker exec -it deep-learning-course sh -c \
-      'ln -fs ~/source/dlw-cape-town/notebooks/workshop-3/colour-challenge/labels.txt \
+      'ln -s ~/source/dlw-cape-town/notebooks/workshop-3/colour-challenge/labels.txt \
       machine-learning-server/mlserver/models/dropinColorClassifier/colors.local.txt'
     ```
 
@@ -87,14 +86,14 @@ The server comes with a built-in colour classifier model which is accessed using
 
 ## Command-line predictions
 
-For interest, you may wish to use the terminal to do an image prediction. These methods were used in development for the HTML frontend was created.
+These command-line approaches were used in development and testing before the HTML frontend was created. For interest, you may wish to use them to.
 
 
 ```bash
 $ docker exec -it deep-learning-course bash
 ```
 
-Execute the commands within the Docker container bash terminal opened above.
+Execute these commands within the Docker container bash terminal opened above.
 
 
 ### Plugin
@@ -109,7 +108,7 @@ pexels-architecture.jpg  pexels-multi-colour.jpeg     pexels-stack-of-books.jpg
 pexels-gears.jpeg        pexels-rose-gold-clips.jpeg  pexels-taxi.jpeg
 $ python -m lib.plugins.colourClassifier --help
 $ # Do a prediction on the  using for a particular image using X and Y 
-# values each set from 0 to 100.
+$ # values each set from 0 to 100.
 $ python -m lib.plugins.colorClassifier ../sampleImages/photos/pexels-architecture.jpg 10 50
 [
     {
@@ -127,17 +126,18 @@ $ python -m lib.plugins.colorClassifier ../sampleImages/photos/pexels-architectu
 
 Do a POST request to an API endpoint using cURL.
 
-Ensure the server is running in one terminal tab.
+1. Ensure the server is running in one terminal window.
 
-```bash
-$ docker exec -it deep-learning-course machine-learning-server/mlserver/app.py
-```
+    ```bash
+    $ docker exec -it deep-learning-course machine-learning-server/mlserver/app.py
+    ```
 
-Provide the path to the image and cURL will send the image on the body of the request for you.
+2. Do a request in another terminal window. Provide the path to the image and cURL will send the image on the body of the request for you.
 
-```bash
-$ curl localhost:9000/services/classify/builtinColors \ 
--F 'imageFile=@../sampleImages/photos/pexels-architecture.jpg' \
--F x=10 -F y=50
-[{"label": "orange", "score": "54.71%"}, {"label": "red", "score": "42.85%"}]
-```
+    ```bash
+    $ curl localhost:9000/services/classify/builtinColors \ 
+      -F 'imageFile=@../sampleImages/photos/pexels-architecture.jpg' \
+      -F x=10 -F y=50
+
+    [{"label": "orange", "score": "54.71%"}, {"label": "red", "score": "42.85%"}]
+    ```
