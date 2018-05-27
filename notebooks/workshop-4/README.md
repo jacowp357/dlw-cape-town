@@ -9,5 +9,5 @@ In this workshop, our objective is to showcase how to build a predictions servic
 ### Sections
 
 1. [Deploy TensorFlow on a Web API](deploy-tensorflow-web-api.md)
-2. TensorFlow Serving
+2. TensorFlow model server iPython notebooks
 
