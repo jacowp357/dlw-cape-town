@@ -89,42 +89,16 @@ The server comes with a built-in colour classifier model which is accessed using
 These command-line approaches were used in development and testing before the HTML frontend was created. For interest, you may wish to use them to.
 
 
-```bash
-$ docker exec -it deep-learning-course bash
-```
-
-Execute these commands within the Docker container bash terminal opened above.
-
-
 ### Plugin
 
 Each model on the server uses a plugin, which handles loading of the model and label files and then doing a prediction. Plugins have been setup with a python command-line interface, which allows testing a model prediction without the server.
 
-```bash
-$ cd machine-learning-server/mlserver
-$ # See available photos.
-$ ls ../sampleImages/photos
-pexels-architecture.jpg  pexels-multi-colour.jpeg     pexels-stack-of-books.jpg
-pexels-gears.jpeg        pexels-rose-gold-clips.jpeg  pexels-taxi.jpeg
-$ python -m lib.plugins.colourClassifier --help
-$ # Do a prediction on the  using for a particular image using X and Y 
-$ # values each set from 0 to 100.
-$ python -m lib.plugins.colorClassifier ../sampleImages/photos/pexels-architecture.jpg 10 50
-[
-    {
-        "label": "orange",
-        "score": "54.71%"
-    },
-    {
-        "label": "red",
-        "score": "42.85%"
-    }
-]
-```
+See [deploy-tensorflow-plugin-commands.ipynb]().
+
 
 ### Web request
 
-Do a POST request to an API endpoint using cURL.
+Use the command-line to do a POST request to a server API endpoint, using cURL.
 
 1. Ensure the server is running in one terminal window.
 
@@ -132,7 +106,13 @@ Do a POST request to an API endpoint using cURL.
     $ docker exec -it deep-learning-course machine-learning-server/mlserver/app.py
     ```
 
-2. Do a request in another terminal window. Provide the path to the image and cURL will send the image on the body of the request for you.
+2. In another window, open a bash terminal within your Docker container.
+
+    ```bash
+    $ docker exec -it deep-learning-course bash
+    ```
+
+3. In the terminal from the above step, do a request to the server. If you provide the path to the image as below, cURL will send the image on the body of the request for you.
 
     ```bash
     $ curl localhost:9000/services/classify/builtinColors \ 
